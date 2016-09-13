@@ -7,7 +7,7 @@ var bodyParser = require('body-parser')
 var cors = require('cors')
 var compression = require('compression')
 
-var psychics = require('./api_routes/psychics')
+var readers = require('./api_routes/readers')
 
 var app = express()
 
@@ -19,7 +19,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'dist')))
 
-app.use('/psychics', psychics)
+app.use('/readers', readers)
 
 app.all('*', function(req,res,next) {
   res.sendFile('index.html', { root: `${__dirname}/dist/`})
