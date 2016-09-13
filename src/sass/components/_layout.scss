@@ -24,6 +24,9 @@ img, embed, object, video {
 
 .navBar {
   background: $darkT !important;
+  position: fixed !important;
+  top: 0 !important;
+  overflowY: hidden !important;
   .navLogo {
     height: 60px;
     vertical-align: middle;

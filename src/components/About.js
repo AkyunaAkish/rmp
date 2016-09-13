@@ -1,13 +1,30 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import * as actions from '../actions'
+import determineAboutGridCols from '../helpers/determineAboutGridCols'
+import { Link } from 'react-router'
 import {
   Paper,
   Card,
   CardMedia,
-  CardTitle
+  CardTitle,
+  GridList,
+  GridTile
 } from 'material-ui'
 
 class About extends Component {
+
+  setAboutGridCols(dimensions) {
+    console.log('dimensions', dimensions);
+    this.props.setAboutGridCols(determineAboutGridCols(dimensions))
+  }
+
+  componentWillMount() {
+    this.setAboutGridCols(window.innerWidth)
+    window.addEventListener('resize', () => {
+      this.setAboutGridCols(window.innerWidth)
+    })
+  }
 
   render() {
     return (
@@ -38,10 +55,45 @@ class About extends Component {
               <span>1-888-334-8145</span>
             </h1>
           </Paper>
+
+          <div className="container aboutGrid">
+            <div className="row row-centered">
+              <Link to='/psychics'>
+                <div className={`col-xs-${this.props.aboutGridCols} col-centered`}><div className="item psychic"><div className="content">
+                  <p>
+                    <h2>Rocky Mountain Psychics</h2>
+                    Meet your Psychics!
+                    Review our Psychic Reader Bio's to ensure the right fit for your individual needs.
+                  </p>
+                </div></div></div>
+              </Link>
+              <a href="/images/cards.JPG" target="_blank">
+              <div className={`col-xs-${this.props.aboutGridCols} col-centered`}><div className="item cards"><div className="content">
+                <p>
+                  <h2>10 Minute Reading Sample Layout</h2>
+                  No two readers or readings are the same, but here is a sample picture of a 10 minute reading 3-card spread for Past, Present, and Future.
+                </p>
+              </div></div></div>
+              </a>
+              <div className={`col-xs-${this.props.aboutGridCols} col-centered`}><div className="item community"><div className="content">
+                <p>
+                  <h2>Community and Events</h2>
+                  Coming Soon! Please check back often for availability with local and community events across the nation. Rocky Mountain Psychics LLC will soon be traveling to your town for larger group event readings with our top talent!
+                </p>
+              </div></div></div>
+            </div>
+          </div>
+
         </div>
       </div>
     )
   }
 }
 
-export default connect()(About)
+function mapStateToProps(state) {
+  return {
+    aboutGridCols: state.material_ui.aboutGridCols
+  }
+}
+
+export default connect(mapStateToProps, actions)(About)

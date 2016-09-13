@@ -4,7 +4,8 @@ import { HOST } from '../helpers/constants'
 import {
   TOGGLE_TABS,
   SET_CURRENT_TAB,
-  TOGGLE_SIDE_NAV
+  TOGGLE_SIDE_NAV,
+  SET_ABOUT_GRID_COLS
 } from './types'
 
 export function toggleTabs(bool) {
@@ -25,5 +26,12 @@ export function toggleSideNav(bool) {
   return {
     type: TOGGLE_SIDE_NAV,
     payload: bool
+  }
+}
+
+export function setAboutGridCols(cols) {
+  return {
+    type: SET_ABOUT_GRID_COLS,
+    payload: cols
   }
 }
