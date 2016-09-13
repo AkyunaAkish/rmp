@@ -1,0 +1,71 @@
+@import '../utils/variables';
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  background: $wildblueT;
+  margin: 0;
+  * {
+    font-family: 'Raleway', sans-serif !important;
+  }
+  background: url("/images/rmpbackground.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+img, embed, object, video {
+  max-width: 100%;
+  height: auto;
+}
+
+.navBar {
+  background: $darkT !important;
+  .navLogo {
+    height: 60px;
+    vertical-align: middle;
+  }
+  span {
+    div {
+      background: $light !important;
+    }
+  }
+}
+
+.navTabs {
+  height: 65px;
+  background: $blue !important;
+  color: $light !important;
+  &:hover {
+    color: $dark !important;
+  }
+  * {
+    margin-right: 12px !important;
+    padding-left: 12px !important;
+  }
+}
+
+.sideNav {
+  background: $darkT !important;
+  .sideNavItem {
+    border-bottom: 2px solid $dark !important;
+    background: $blue !important;
+    color: $light !important;
+    &:hover {
+      background: $dark !important;
+      color: $blue !important;
+    }
+    span {
+      div {
+        background: $light !important;
+      }
+    }
+  }
+
+  .iconText {
+    display: inline;
+  }
+}
