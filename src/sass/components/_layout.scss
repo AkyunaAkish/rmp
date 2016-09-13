@@ -17,11 +17,6 @@ body {
   background-size: cover;
 }
 
-img, embed, object, video {
-  max-width: 100%;
-  height: auto;
-}
-
 .navBar {
   background: $darkT !important;
   position: fixed !important;

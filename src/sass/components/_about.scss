@@ -4,12 +4,11 @@
   padding-top: 160px;
   .authForm {
     display: table;
-    height: 60vh;
     width: 70%;
     margin: 0 auto;
     background: $darkT !important;
     margin-bottom: 20px;
-    padding-top: 5%;
+    padding-top: 1%;
   }
   .authCard {
     width: 70%;
@@ -21,8 +20,6 @@
     }
   }
   p, h1 {
-    padding-left: 20px;
-    padding-right: 20px;
     color: $light;
     text-align: center;
     a {
@@ -78,6 +75,7 @@
     width: 100%;
     line-height: 200px;
     text-align: center;
+    overflow: scroll;
     p {
       display: inline-block;
       vertical-align: middle;
@@ -87,14 +85,23 @@
 
   .psychic {
     background: url("/images/psychic.JPG") no-repeat center;
-    background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
   .cards {
     background: url("/images/cards.JPG") no-repeat center;
-    background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
   .community {
     background: url("/images/community.jpg") no-repeat center;
-    background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
 }
