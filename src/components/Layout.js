@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { Router } from 'react-router'
 import { determineTab } from '../helpers/determineTab'
 import { browserHistory } from 'react-router'
+import determineGridCols from '../helpers/determineGridCols'
 import {
   AppBar,
   Tabs,
@@ -22,8 +23,18 @@ class Layout extends Component {
     this.props.setCurrentTab(determineTab(this.props.location.pathname))
   }
 
+  componentWillMount() {
+    this.setGridCols(window.innerWidth)
+    window.addEventListener('resize', () => {
+      this.setGridCols(window.innerWidth)
+    })
+  }
   static contextTypes = {
     router: PropTypes.object
+  }
+
+  setGridCols(dimensions) {
+    this.props.setGridCols(determineGridCols(dimensions))
   }
 
   checkDimensions(dimensions) {
@@ -40,8 +51,10 @@ class Layout extends Component {
 
   componentWillMount() {
     this.checkDimensions(window.innerWidth)
+    this.setGridCols(window.innerWidth)
     window.addEventListener('resize', () => {
       this.checkDimensions(window.innerWidth)
+      this.setGridCols(window.innerWidth)
     })
     browserHistory.listen((location) => {
       this.props.setCurrentTab(determineTab(location.pathname))

@@ -2,14 +2,16 @@ import {
   TOGGLE_TABS,
   TOGGLE_SIDE_NAV,
   SET_CURRENT_TAB,
-  SET_ABOUT_GRID_COLS
+  SET_GRID_COLS,
+  TOGGLE_CARD_DIALOG
 } from '../actions/types'
 
 const initialState = {
   showTabs: true,
   showSideNav: false,
   currentTab: 0,
-  aboutGridCols: 3
+  gridCols: 3,
+  showCardDialog: false
 }
 
 export default function(state = initialState, action) {
@@ -23,8 +25,11 @@ export default function(state = initialState, action) {
     case SET_CURRENT_TAB:
     return { ...state, currentTab: action.payload }
     break
-    case SET_ABOUT_GRID_COLS:
-    return { ...state, aboutGridCols: action.payload }
+    case SET_GRID_COLS:
+    return { ...state, gridCols: action.payload }
+    break
+    case TOGGLE_CARD_DIALOG:
+    return { ...state, showCardDialog: action.payload }
     break
   }
   return { ...state }

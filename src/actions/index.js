@@ -5,7 +5,8 @@ import {
   TOGGLE_TABS,
   SET_CURRENT_TAB,
   TOGGLE_SIDE_NAV,
-  SET_ABOUT_GRID_COLS
+  SET_GRID_COLS,
+  TOGGLE_CARD_DIALOG
 } from './types'
 
 export function toggleTabs(bool) {
@@ -29,9 +30,16 @@ export function toggleSideNav(bool) {
   }
 }
 
-export function setAboutGridCols(cols) {
+export function toggleCardDialog(bool) {
   return {
-    type: SET_ABOUT_GRID_COLS,
+    type: TOGGLE_CARD_DIALOG,
+    payload: bool
+  }
+}
+
+export function setGridCols(cols) {
+  return {
+    type: SET_GRID_COLS,
     payload: cols
   }
 }

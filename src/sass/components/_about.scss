@@ -1,8 +1,8 @@
 @import '../utils/variables';
 
-.authContainer {
+.aboutContainer {
   padding-top: 160px;
-  .authForm {
+  .aboutForm {
     display: table;
     width: 70%;
     margin: 0 auto;
@@ -10,7 +10,7 @@
     margin-bottom: 20px;
     padding-top: 1%;
   }
-  .authCard {
+  .aboutCard {
     width: 70%;
     margin: 0 auto;
     text-align: center;
@@ -43,13 +43,13 @@
 }
 
 @media screen and (max-width: 850px) {
-  .authContainer {
+  .aboutContainer {
     padding-top: 190px !important;
   }
-  .authForm {
+  .aboutForm {
     width: 90% !important;
   }
-  .authCard {
+  .aboutCard {
     width: 90% !important;
   }
 }
@@ -76,7 +76,7 @@
     line-height: 200px;
     text-align: center;
     overflow: scroll;
-    p {
+    div {
       display: inline-block;
       vertical-align: middle;
       line-height: normal;
@@ -104,4 +104,25 @@
     -o-background-size: cover;
     background-size: cover;
   }
+
+  .cardCol {
+    cursor: pointer;
+  }
+}
+
+.dialogButton {
+  margin-left: 15% !important;
+  * {
+    background: $dark !important;
+    color: $light !important;
+    &:hover {
+      * {
+        color: $blue !important;
+      }
+    }
+  }
+}
+
+.dialogImg {
+  width: 100%;
 }

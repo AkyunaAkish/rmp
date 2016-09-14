@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 
 class Psychics extends Component {
   render() {
     return (
-      <div id='psychicsDiv'>
-        <h1>This is where the psychics will go</h1>
-      </div>
-    )
+      <div>Psychics will be listed here</div>  
+      )
+    }
   }
-}
 
-export default connect()(Psychics)
+  export default Psychics

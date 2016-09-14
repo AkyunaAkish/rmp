@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../actions'
-import determineAboutGridCols from '../helpers/determineAboutGridCols'
 import { Link } from 'react-router'
 import {
   Paper,
@@ -9,34 +8,28 @@ import {
   CardMedia,
   CardTitle,
   GridList,
-  GridTile
+  GridTile,
+  Dialog,
+  FlatButton
 } from 'material-ui'
 
 class About extends Component {
 
-  setAboutGridCols(dimensions) {
-    console.log('dimensions', dimensions);
-    this.props.setAboutGridCols(determineAboutGridCols(dimensions))
-  }
-
-  componentWillMount() {
-    this.setAboutGridCols(window.innerWidth)
-    window.addEventListener('resize', () => {
-      this.setAboutGridCols(window.innerWidth)
-    })
+  toggleCardDialog() {
+    this.props.toggleCardDialog(!this.props.showCardDialog)
   }
 
   render() {
     return (
       <div>
-        <div className='authContainer'>
-          <Card className='authCard'>
+        <div className='aboutContainer'>
+          <Card className='aboutCard'>
             <CardMedia
               overlay={<CardTitle title='About Rocky Mountain Psychics' />}
               >
             </CardMedia>
           </Card>
-          <Paper className='authForm' zDepth={5}>
+          <Paper className='aboutForm' zDepth={5}>
             <p>
               Rocky Mountain Psychics LLC wants to make sure you are satisfied with your reading. We hand select and screen every single psychic working for Rocky Mountain Psychics to ensure extraordinary talent available to you.
             </p>
@@ -59,32 +52,45 @@ class About extends Component {
           <div className="container aboutGrid">
             <div className="row row-centered">
               <Link to='/psychics'>
-                <div className={`col-xs-${this.props.aboutGridCols} col-centered`}><div className="item psychic"><div className="content">
-                  <p>
+                <div className={`col-xs-${this.props.gridCols} col-centered`}><div className="item psychic"><div className="content">
+                  <div>
                     <h2>Rocky Mountain Psychics</h2>
-                    Meet your Psychics!
-                    Review our Psychic Reader Bio's to ensure the right fit for your individual needs.
-                  </p>
+                    <p> Meet your Psychics! Review our Psychic Reader Bio's to ensure the right fit for your individual needs.</p>
+                  </div>
                 </div></div></div>
               </Link>
-              <a href="/images/cards.JPG" target="_blank">
-              <div className={`col-xs-${this.props.aboutGridCols} col-centered`}><div className="item cards"><div className="content">
-                <p>
+              <div onClick={this.toggleCardDialog.bind(this)} className={`col-xs-${this.props.gridCols} col-centered cardCol`}><div className="item cards"><div className="content">
+                <div>
                   <h2>10 Minute Reading Sample Layout</h2>
-                  No two readers or readings are the same, but here is a sample picture of a 10 minute reading 3-card spread for Past, Present, and Future.
-                </p>
+                  <p>No two readers or readings are the same, but here is a sample picture of a 10 minute reading 3-card spread for Past, Present, and Future.</p>
+                </div>
               </div></div></div>
-              </a>
-              <div className={`col-xs-${this.props.aboutGridCols} col-centered`}><div className="item community"><div className="content">
-                <p>
+              <div className={`col-xs-${this.props.gridCols} col-centered`}><div className="item community"><div className="content">
+                <div>
                   <h2>Community and Events</h2>
-                  Coming Soon! Please check back often for availability with local and community events across the nation. Rocky Mountain Psychics LLC will soon be traveling to your town for larger group event readings with our top talent!
-                </p>
+                  <p>Coming Soon! Please check back often for availability with local and community events across the nation. Rocky Mountain Psychics LLC will soon be traveling to your town for larger group event readings with our top talent!</p>
+                </div>
               </div></div></div>
             </div>
           </div>
 
         </div>
+        <Dialog
+          title='10 Minute Reading Sample Layout'
+          actions={[
+            <FlatButton
+              label='CLOSE'
+              className='dialogButton'
+              keyboardFocused={true}
+              onTouchTap={this.toggleCardDialog.bind(this)}
+              />
+          ]}
+          modal={false}
+          open={this.props.showCardDialog}
+          onRequestClose={this.toggleCardDialog.bind(this)}
+          >
+          <img src="/images/cards.JPG" alt="10 Minute Reading Sample Layout" className="dialogImg"/>
+        </Dialog>
       </div>
     )
   }
@@ -92,7 +98,8 @@ class About extends Component {
 
 function mapStateToProps(state) {
   return {
-    aboutGridCols: state.material_ui.aboutGridCols
+    gridCols: state.material_ui.gridCols,
+    showCardDialog: state.material_ui.showCardDialog
   }
 }
 
