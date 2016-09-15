@@ -52,8 +52,12 @@
 }
 
 .psychicDialog {
-  display: table;
+  //display: table;
   width: 100%;
+  overflow: scroll;
+  * {
+    overflow: scroll;
+  }
 }
 
 .psychicDialogTitle {

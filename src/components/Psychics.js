@@ -76,6 +76,11 @@ class Psychics extends Component {
         <Dialog
           title={`Call ${this.props.selectedPsychic.name}: ${this.props.selectedPsychic.phone}`}
           titleClassName='psychicDialogTitle'
+          modal={false}
+          bodyStyle={{overflow: 'auto', position: 'relative'}}
+          repositionOnUpdate={false}
+          autoScrollBodyContent={true}
+          autoDetectWindowHeight={false}
           actions={[
             <FlatButton
               label='SUBMIT PAYMENT'
@@ -90,7 +95,6 @@ class Psychics extends Component {
               />
           ]}
           actionsContainerClassName='psychicDialogActions'
-          modal={false}
           open={this.props.showPsychicDialog}
           onRequestClose={this.togglePsychicDialog.bind(this)}
           bodyClassName='psychicDialog'
@@ -100,6 +104,7 @@ class Psychics extends Component {
       </Paper>
     )
   }
+
 }
 
 function mapStateToProps(state) {
