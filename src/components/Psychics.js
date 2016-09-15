@@ -33,12 +33,19 @@ class Psychics extends Component {
       {
         name: 'Dina Faye',
         timeZone: 'MDT',
-        image: '/images/psychics/dina.jpg'
+        image: '/images/psychics/dina.jpg',
+        description: 'No description yet.',
+        phone: 'No phone number yet.'
       },
       {
         name: 'Crystal Meshell',
         timeZone: 'PDT',
-        image: '/images/psychics/crystal.jpg'
+        image: '/images/psychics/crystal.jpg',
+        description: `Lightworker and guide to the angelic realm.
+        Crystal has been working with the tarot deck for 15 years. She specializes in love, money,health, and career. She is a reiki energy healer; including prayer, remote viewing,color ray healing, and work with the Angels and Archangels in each session.
+        She has been drawn to the healing and esoteric arts since the age of 12 and her devotion to the Divine is timeless. Her specialty is to help uncover the unconscious beliefs  systems or obstacles so that your True Self can
+        come forth and you can more easily create the life you long for.`,
+        phone: '310-309-1996'
       }
     ]
 
@@ -67,8 +74,14 @@ class Psychics extends Component {
 
         </List>
         <Dialog
-          title={this.props.selectedPsychic.name}
+          title={`Call ${this.props.selectedPsychic.name}: ${this.props.selectedPsychic.phone}`}
+          titleClassName='psychicDialogTitle'
           actions={[
+            <FlatButton
+              label='SUBMIT PAYMENT'
+              className='dialogButton'
+              keyboardFocused={true}
+              />,
             <FlatButton
               label='CLOSE'
               className='dialogButton'
@@ -76,10 +89,13 @@ class Psychics extends Component {
               onTouchTap={this.togglePsychicDialog.bind(this)}
               />
           ]}
+          actionsContainerClassName='psychicDialogActions'
           modal={false}
           open={this.props.showPsychicDialog}
           onRequestClose={this.togglePsychicDialog.bind(this)}
+          bodyClassName='psychicDialog'
           >
+          <p>{this.props.selectedPsychic.description}</p>
         </Dialog>
       </Paper>
     )

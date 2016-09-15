@@ -51,6 +51,21 @@
   }
 }
 
+.psychicDialog {
+  display: table;
+  width: 100%;
+}
+
+.psychicDialogTitle {
+  text-align: center;
+}
+
+.psychicDialogActions {
+  button {
+    margin-bottom: 10px !important;
+  }
+}
+
 @media screen and (max-width: 850px) {
   .psychicList {
     margin-top: 120px !important;
@@ -65,47 +80,3 @@
   }
 
 }
-
-//.projectGridTitle {
-//  width: auto;
-//  img {
-//    width: 100%;
-//    height: 100%;
-//  }
-//  .projectGithub {
-//    color: $blue;
-//    font-size: 1.4em;
-//    &:hover {
-//      color: white;
-//    }
-//  }
-//
-//  .tileLiveLink {
-//    color: $blue;
-//    font-size: 1.4em;
-//    &:hover {
-//      color: white;
-//    }
-//  }
-//
-//  .projectButton {
-//    * {
-//      color: white !important;
-//      background: $dark;
-//      &:hover {
-//        color: $blue !important;
-//      }
-//    }
-//  }
-//
-//  .gridTitle {
-//    color: white;
-//    font-size: 1.2em;
-//
-//    &:hover {
-//      color: $blue;
-//      text-decoration: underline;
-//    }
-//  }
-//
-//}
