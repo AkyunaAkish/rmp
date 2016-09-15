@@ -7,8 +7,6 @@ import {
   Card,
   CardMedia,
   CardTitle,
-  GridList,
-  GridTile,
   Dialog,
   FlatButton
 } from 'material-ui'
@@ -52,20 +50,20 @@ class About extends Component {
           <div className="container aboutGrid">
             <div className="row row-centered">
               <Link to='/psychics'>
-                <div className={`col-xs-${this.props.gridCols} col-centered`}><div className="item psychic"><div className="content">
+                <div className={`col-xs-${this.props.gridCols.bootStrap} col-centered`}><div className="item psychic"><div className="content">
                   <div>
                     <h2>Rocky Mountain Psychics</h2>
                     <p> Meet your Psychics! Review our Psychic Reader Bio's to ensure the right fit for your individual needs.</p>
                   </div>
                 </div></div></div>
               </Link>
-              <div onClick={this.toggleCardDialog.bind(this)} className={`col-xs-${this.props.gridCols} col-centered cardCol`}><div className="item cards"><div className="content">
+              <div onClick={this.toggleCardDialog.bind(this)} className={`col-xs-${this.props.gridCols.bootStrap} col-centered cardCol`}><div className="item cards"><div className="content">
                 <div>
                   <h2>10 Minute Reading Sample Layout</h2>
                   <p>No two readers or readings are the same, but here is a sample picture of a 10 minute reading 3-card spread for Past, Present, and Future.</p>
                 </div>
               </div></div></div>
-              <div className={`col-xs-${this.props.gridCols} col-centered`}><div className="item community"><div className="content">
+              <div className={`col-xs-${this.props.gridCols.bootStrap} col-centered`}><div className="item community"><div className="content">
                 <div>
                   <h2>Community and Events</h2>
                   <p>Coming Soon! Please check back often for availability with local and community events across the nation. Rocky Mountain Psychics LLC will soon be traveling to your town for larger group event readings with our top talent!</p>

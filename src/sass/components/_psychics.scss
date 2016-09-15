@@ -1,1 +1,111 @@
 @import '../utils/variables';
+
+.psychicList {
+  margin: 0 auto;
+  margin-top: 100px;
+  width: 70%;
+  background: none !important;
+
+  .psychicListItem {
+    background: $darkExtraT !important;
+    height: 100px !important;
+    display: table !important;
+    width: 50%;
+    float: left;
+    text-align: center;
+    .psychicListItemImage {
+      margin: 0 auto;
+      height: 250px;
+      width: 200px;
+    }
+    .psychicListItemText {
+      font-size: 2em;
+      color: $light;
+      padding-top: 10px;
+    }
+    .psychicListTimeZone {
+      font-size: 1.2em;
+      color: $light;
+      padding-top: 10px;
+    }
+    &:hover {
+      background: rgba(255,255,255,.5) !important;
+      .psychicListItemText, .psychicListTimeZone {
+        color: $dark;
+      }
+    }
+  }
+
+  .psychicListHeader {
+    background: $dark;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    h1 {
+      margin: 0;
+      padding: 0;
+      color: $light;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .psychicList {
+    margin-top: 120px !important;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 592px) {
+  .psychicListItem {
+    width: 100% !important;
+    float: none !important;
+  }
+
+}
+
+//.projectGridTitle {
+//  width: auto;
+//  img {
+//    width: 100%;
+//    height: 100%;
+//  }
+//  .projectGithub {
+//    color: $blue;
+//    font-size: 1.4em;
+//    &:hover {
+//      color: white;
+//    }
+//  }
+//
+//  .tileLiveLink {
+//    color: $blue;
+//    font-size: 1.4em;
+//    &:hover {
+//      color: white;
+//    }
+//  }
+//
+//  .projectButton {
+//    * {
+//      color: white !important;
+//      background: $dark;
+//      &:hover {
+//        color: $blue !important;
+//      }
+//    }
+//  }
+//
+//  .gridTitle {
+//    color: white;
+//    font-size: 1.2em;
+//
+//    &:hover {
+//      color: $blue;
+//      text-decoration: underline;
+//    }
+//  }
+//
+//}

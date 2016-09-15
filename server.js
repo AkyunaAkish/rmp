@@ -11,7 +11,7 @@ var readers = require('./api_routes/readers')
 
 var app = express()
 
-app.use(favicon(__dirname + '/dist/images/RMPLIGHT.ico'));
+app.use(favicon(__dirname + '/dist/images/logo/whiteRMPLogo.ico'));
 app.use(cors())
 app.use(compression())
 app.use(logger('dev'))

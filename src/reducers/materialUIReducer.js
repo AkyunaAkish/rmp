@@ -10,7 +10,10 @@ const initialState = {
   showTabs: true,
   showSideNav: false,
   currentTab: 0,
-  gridCols: 3,
+  gridCols: {
+    bootStrap: 4,
+    materialUI: 3
+  },
   showCardDialog: false
 }
 

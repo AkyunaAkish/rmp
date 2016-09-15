@@ -85,8 +85,8 @@ class Layout extends Component {
       <div>
         <AppBar
           className='navBar'
-          title={this.props.showTabs ? <img src='images/RMPBLUEWHITE.png' className='navLogo'/> : null}
-          iconElementRight={!this.props.showTabs ? <img src='images/RMPBLUEWHITE.png' className='navLogo'/> : null}
+          title={this.props.showTabs ? <img src='images/logo/blueRMPLogo.png' className='navLogo'/> : null}
+          iconElementRight={!this.props.showTabs ? <img src='images/logo/blueRMPLogo.png' className='navLogo'/> : null}
           showMenuIconButton={!this.props.showTabs}
           onLeftIconButtonTouchTap={this.toggleSideNav.bind(this)}
           children={this.props.showTabs ? [

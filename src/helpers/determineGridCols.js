@@ -1,9 +1,9 @@
 export default function determineGridCols(dimensions) {
   if (dimensions > 1500) {
-    return 4
+    return { bootStrapCols: 4, materialUICols: 3 }
   } else if(dimensions < 1500 && dimensions > 990) {
-    return 6
+    return { bootStrapCols: 6, materialUICols: 2 }
   } else {
-    return 12
+    return { bootStrapCols: 12, materialUICols: 1 }
   }
 }

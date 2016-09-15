@@ -6,8 +6,24 @@ import {
   SET_CURRENT_TAB,
   TOGGLE_SIDE_NAV,
   SET_GRID_COLS,
-  TOGGLE_CARD_DIALOG
+  TOGGLE_CARD_DIALOG,
+  SET_SELECTED_PSYCHIC,
+  TOGGLE_PSYCHIC_DIALOG
 } from './types'
+
+export function setSelectedPsychic(psychic) {
+  return {
+    type: SET_SELECTED_PSYCHIC,
+    payload: psychic
+  }
+}
+
+export function togglePsychicDialog(bool) {
+  return {
+    type: TOGGLE_PSYCHIC_DIALOG,
+    payload: bool
+  }
+}
 
 export function toggleTabs(bool) {
   return {
@@ -40,6 +56,9 @@ export function toggleCardDialog(bool) {
 export function setGridCols(cols) {
   return {
     type: SET_GRID_COLS,
-    payload: cols
+    payload: {
+      bootStrap: cols.bootStrapCols,
+      materialUI: cols.materialUICols
+    }
   }
 }
