@@ -36,6 +36,11 @@
     }
   }
 
+  .psychicDialogOuterClass {
+    position: relative !important;
+    height: 100% !important;
+  }
+
   .psychicListHeader {
     background: $dark;
     width: 100%;
@@ -51,17 +56,12 @@
   }
 }
 
-.psychicDialog {
-  //display: table;
-  width: 100%;
-  overflow: scroll;
-  * {
-    overflow: scroll;
-  }
-}
-
 .psychicDialogTitle {
   text-align: center;
+}
+
+.psychicDialog {
+  max-height: 200px !important;
 }
 
 .psychicDialogActions {
@@ -82,5 +82,16 @@
     width: 100% !important;
     float: none !important;
   }
+  .psychicDialog {
+    max-height: 100px !important;
+  }
+}
 
+@media screen and (max-width: 240) {
+  .psychicDialog {
+    max-height: 50px !important;
+  }
+  .contentClass {
+    max-height: 100px !important;
+  }
 }

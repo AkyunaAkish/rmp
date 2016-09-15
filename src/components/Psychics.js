@@ -74,13 +74,16 @@ class Psychics extends Component {
 
         </List>
         <Dialog
+          className='psychicDialogOuterClass'
+          contentClassName='contentClass'
+          overlayClassName='overlayClass'
           title={`Call ${this.props.selectedPsychic.name}: ${this.props.selectedPsychic.phone}`}
           titleClassName='psychicDialogTitle'
           modal={false}
           bodyStyle={{overflow: 'auto', position: 'relative'}}
           repositionOnUpdate={false}
           autoScrollBodyContent={true}
-          autoDetectWindowHeight={false}
+          autoDetectWindowHeight={true}
           actions={[
             <FlatButton
               label='SUBMIT PAYMENT'
