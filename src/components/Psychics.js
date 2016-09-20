@@ -31,7 +31,7 @@ class Psychics extends Component {
   render() {
     const psychicInfo = [
       {
-        name: 'Dina Faye',
+        name: 'Harley',
         timeZone: 'MDT',
         image: '/images/psychics/dina.jpg',
         description: 'No description yet.',
@@ -45,66 +45,72 @@ class Psychics extends Component {
         Crystal has been working with the tarot deck for 15 years. She specializes in love, money,health, and career. She is a reiki energy healer; including prayer, remote viewing,color ray healing, and work with the Angels and Archangels in each session.
         She has been drawn to the healing and esoteric arts since the age of 12 and her devotion to the Divine is timeless. Her specialty is to help uncover the unconscious beliefs  systems or obstacles so that your True Self can
         come forth and you can more easily create the life you long for.`,
-        phone: '310-309-1996'
+        phone: 'No phone number yet.'
       }
     ]
-
     return (
-      <Paper className='psychicList'>
-        <List>
-          <div className='psychicListHeader'>
-            <h1>Our Psychics</h1>
-          </div>
-          {psychicInfo.map((psychic) => {
-            return (
-              <ListItem className='psychicListItem' key={psychic.name} onClick={this.setSelectedPsychic.bind(this, psychic)}>
-                <span>
-                  <img src={psychic.image} className='psychicListItemImage' alt=""/>
+      <div>
+        <Paper className='psychicList'>
+          <List>
+            <div className='psychicListHeader'>
+              <h1>Our Psychics</h1>
+            </div>
+            {psychicInfo.map((psychic) => {
+              return (
+                <ListItem className='psychicListItem' key={psychic.name} onClick={this.setSelectedPsychic.bind(this, psychic)}>
+                  <span>
+                    <img src={psychic.image} className='psychicListItemImage' alt=""/>
 
-                  <p className='psychicListItemText'>
-                    {psychic.name}
-                  </p>
-                  <p className='psychicListTimeZone'>
-                    Time Zone: {psychic.timeZone}
-                  </p>
-                </span>
-              </ListItem>
-            )
-          })}
-
-        </List>
-        <Dialog
-          className='psychicDialogOuterClass'
-          contentClassName='contentClass'
-          overlayClassName='overlayClass'
-          title={`Call ${this.props.selectedPsychic.name}: ${this.props.selectedPsychic.phone}`}
-          titleClassName='psychicDialogTitle'
-          modal={false}
-          bodyStyle={{overflow: 'auto', position: 'relative'}}
-          repositionOnUpdate={false}
-          autoScrollBodyContent={true}
-          autoDetectWindowHeight={true}
-          actions={[
-            <FlatButton
-              label='SUBMIT PAYMENT'
-              className='dialogButton'
-              keyboardFocused={true}
-              />,
-            <FlatButton
-              label='CLOSE'
-              className='dialogButton'
-              keyboardFocused={true}
-              onTouchTap={this.togglePsychicDialog.bind(this)}
-              />
-          ]}
-          actionsContainerClassName='psychicDialogActions'
-          open={this.props.showPsychicDialog}
-          onRequestClose={this.togglePsychicDialog.bind(this)}
-          bodyClassName='psychicDialog'
-          >
-          <p>{this.props.selectedPsychic.description}</p>
-        </Dialog>
-      </Paper>
+                    <p className='psychicListItemText'>
+                      {psychic.name}
+                    </p>
+                    <p className='psychicListTimeZone'>
+                      Time Zone: {psychic.timeZone}
+                    </p>
+                  </span>
+                </ListItem>
+              )
+            })}
+          </List>
+          <Dialog
+            className='psychicDialogOuterClass'
+            contentClassName='contentClass'
+            overlayClassName='overlayClass'
+            title={`Call ${this.props.selectedPsychic.name}: ${this.props.selectedPsychic.phone}`}
+            titleClassName='psychicDialogTitle'
+            modal={false}
+            bodyStyle={{overflow: 'auto', position: 'relative'}}
+            repositionOnUpdate={false}
+            autoScrollBodyContent={true}
+            autoDetectWindowHeight={true}
+            actions={[
+              <FlatButton
+                label='CLOSE'
+                className='dialogButton'
+                keyboardFocused={true}
+                onTouchTap={this.togglePsychicDialog.bind(this)}
+                />
+            ]}
+            actionsContainerClassName='psychicDialogActions'
+            open={this.props.showPsychicDialog}
+            onRequestClose={this.togglePsychicDialog.bind(this)}
+            bodyClassName='psychicDialog'
+            >
+            <p>{this.props.selectedPsychic.description}</p>
+          </Dialog>
+        </Paper>
+        <form>
+          <script
+            src="https://checkout.stripe.com/checkout.js" className="stripe-button"
+            data-key="pk_test_yoii5LoMXjZxA3R4jPRaitzj"
+            data-amount="999"
+            data-name="Demo Site"
+            data-description="Widget"
+            data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+            data-locale="auto">
+          </script>
+        </form>
+      </div>
     )
   }
 
@@ -116,39 +122,39 @@ function mapStateToProps(state) {
     selectedPsychic: state.psychic.selectedPsychic,
     showPsychicDialog: state.psychic.showPsychicDialog
   }
-
 }
 
 export default connect(mapStateToProps, actions)(Psychics)
 
 
-
-
-
-
-
-
-// <ListItem className='psychicListItem'>
-//   <span>
-//     <img src="/images/psychics/dina.jpg" className='psychicListItemImage'alt=""/>
-//
-//     <p className='psychicListItemText'>
-//       Dina Faye
-//     </p>
-//     <p className='psychicListTimeZone'>
-//       Time Zone: MDT
-//     </p>
-//   </span>
-// </ListItem>
-// <ListItem className='psychicListItem'>
-//   <span>
-//     <img src="/images/psychics/crystal.jpg" className='psychicListItemImage'alt=""/>
-//
-//     <p className='psychicListItemText'>
-//       Crystal Meshell
-//     </p>
-//     <p className='psychicListTimeZone'>
-//       Time Zone: PDT
-//     </p>
-//   </span>
-// </ListItem>
+// <Dialog
+//   className='psychicDialogOuterClass'
+//   contentClassName='contentClass'
+//   overlayClassName='overlayClass'
+//   title={`Call ${this.props.selectedPsychic.name}: ${this.props.selectedPsychic.phone}`}
+//   titleClassName='psychicDialogTitle'
+//   modal={false}
+//   bodyStyle={{overflow: 'auto', position: 'relative'}}
+//   repositionOnUpdate={false}
+//   autoScrollBodyContent={true}
+//   autoDetectWindowHeight={true}
+//   actions={[
+//     <FlatButton
+//       label='SUBMIT PAYMENT'
+//       className='dialogButton'
+//       keyboardFocused={true}
+//       />,
+//     <FlatButton
+//       label='CLOSE'
+//       className='dialogButton'
+//       keyboardFocused={true}
+//       onTouchTap={this.togglePsychicDialog.bind(this)}
+//       />
+//   ]}
+//   actionsContainerClassName='psychicDialogActions'
+//   open={this.props.showPsychicDialog}
+//   onRequestClose={this.togglePsychicDialog.bind(this)}
+//   bodyClassName='psychicDialog'
+//   >
+//   <p>{this.props.selectedPsychic.description}</p>
+// </Dialog>
