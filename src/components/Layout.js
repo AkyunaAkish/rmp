@@ -100,13 +100,13 @@ class Layout extends Component {
                 label='ABOUT'
                 value={0}
                 className='navTabs'
-                onClick={() => this.switchComponent('/')}
+                onActive={() => this.switchComponent('/')}
                 />
               <Tab
                 label='PSYCHICS'
                 value={1}
                 className='navTabs'
-                onClick={() => this.switchComponent('/psychics')}
+                onActive={() => this.switchComponent('/psychics')}
                 />
             </Tabs>
           ] : []}
@@ -120,18 +120,18 @@ class Layout extends Component {
           >
           <MenuItem
             className='sideNavItem'
-            onClick={this.toggleSideNav.bind(this)}
+            onTouchTap={this.toggleSideNav.bind(this)}
             id='closeNavItem'>
             <p className='iconText'>CLOSE MENU</p>
           </MenuItem>
           <MenuItem
             className='sideNavItem'
-            onClick={() => this.switchComponent('/')}>
+            onTouchTap={() => this.switchComponent('/')}>
             ABOUT
           </MenuItem>
           <MenuItem
             className='sideNavItem'
-            onClick={() => this.switchComponent('/psychics')}>
+            onTouchTap={() => this.switchComponent('/psychics')}>
             PSYCHICS
           </MenuItem>
         </Drawer>
