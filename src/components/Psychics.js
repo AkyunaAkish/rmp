@@ -22,9 +22,8 @@ class Psychics extends Component {
     this.props.togglePsychicDialog(!this.props.showPsychicDialog)
   }
 
-  setSelectedPsychic(a,b) {
-    console.log('A', a, 'B', b);
-    this.props.setSelectedPsychic(a)
+  setSelectedPsychic(psychic) {
+    this.props.setSelectedPsychic(psychic)
     this.props.togglePsychicDialog(true)
   }
 
@@ -33,7 +32,7 @@ class Psychics extends Component {
       {
         name: 'Harley',
         timeZone: 'MDT',
-        image: '/images/psychics/dina.jpg',
+        image: '/images/psychics/placeholder.png',
         description: 'No description yet.',
         phone: 'No phone number yet.'
       },
@@ -45,6 +44,16 @@ class Psychics extends Component {
         Crystal has been working with the tarot deck for 15 years. She specializes in love, money,health, and career. She is a reiki energy healer; including prayer, remote viewing,color ray healing, and work with the Angels and Archangels in each session.
         She has been drawn to the healing and esoteric arts since the age of 12 and her devotion to the Divine is timeless. Her specialty is to help uncover the unconscious beliefs  systems or obstacles so that your True Self can
         come forth and you can more easily create the life you long for.`,
+        phone: 'No phone number yet.'
+      },
+      {
+        name: 'Elemiah',
+        timeZone: 'CST',
+        image: '/images/psychics/placeholder.png',
+        description: `Hello! My name is Elemiah, the Angel of Inward Journey. I was named after the Angel Elemiah, because she is thought to be beneficial to those seeking help with traveling within and anyone on a journey of self discovery. Let me help you achieve this goal. Being a professional card reader for almost 20 years, has given me insight into events and situations that cause stress and worry. The use of my Angel cards are also used to give you confirmations on the topics and special messages your Angels and Guides wish you to know!
+        Elemiah is an Ordained Minister, Reiki Master, Certified Hypnosis Practitioner, Huna student and teacher, Time Line therapy associate and certified in Radical Forgiveness. In years past, Elemiah has been a radio personality and producer for several online radio/blog talk programs. Her skills as a Medium often accelerate the messages that she receives from friends and relatives that have crossed over.
+        Stay Blessed,
+        Elemiah`,
         phone: 'No phone number yet.'
       }
     ]

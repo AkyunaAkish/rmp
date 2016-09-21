@@ -11,6 +11,10 @@ import {
   TOGGLE_PSYCHIC_DIALOG
 } from './types'
 
+export function sendPayment(paymentInformation) {
+  return axios.post(`${HOST}/sendPayment`)
+}
+
 export function setSelectedPsychic(psychic) {
   return {
     type: SET_SELECTED_PSYCHIC,
