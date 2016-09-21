@@ -32,7 +32,7 @@ class Psychics extends Component {
       {
         name: 'Harley',
         timeZone: 'MDT',
-        image: '/images/psychics/placeholder.png',
+        image: '/images/psychics/harley.jpg',
         description: 'No description yet.',
         phone: 'No phone number yet.'
       },
@@ -49,7 +49,7 @@ class Psychics extends Component {
       {
         name: 'Elemiah',
         timeZone: 'CST',
-        image: '/images/psychics/placeholder.png',
+        image: '/images/psychics/elemiah.jpg',
         description: `Hello! My name is Elemiah, the Angel of Inward Journey. I was named after the Angel Elemiah, because she is thought to be beneficial to those seeking help with traveling within and anyone on a journey of self discovery. Let me help you achieve this goal. Being a professional card reader for almost 20 years, has given me insight into events and situations that cause stress and worry. The use of my Angel cards are also used to give you confirmations on the topics and special messages your Angels and Guides wish you to know!
         Elemiah is an Ordained Minister, Reiki Master, Certified Hypnosis Practitioner, Huna student and teacher, Time Line therapy associate and certified in Radical Forgiveness. In years past, Elemiah has been a radio personality and producer for several online radio/blog talk programs. Her skills as a Medium often accelerate the messages that she receives from friends and relatives that have crossed over.
         Stay Blessed,
